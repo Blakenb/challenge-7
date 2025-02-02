@@ -1,7 +1,17 @@
 import fs from "fs";
 
 function getLicense(license) {
-  const text = fs.readFileSync("./utils/mit.md", "utf-8");
+  let path = "";
+  if (license === "GNU") {
+    path = "utils/gnu.md";
+  }
+  if (license === "MIT") {
+    path = "utils/mit.md";
+  }
+  if (license === "Apache") {
+    path = "utils/apache.md";
+  }
+  const text = fs.readFileSync(path, "utf-8");
   return text;
 }
 
