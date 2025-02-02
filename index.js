@@ -2,7 +2,6 @@
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
 import inquirer from "inquirer";
-import getLicense from "./utils/getLicense.js";
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -60,8 +59,6 @@ function init(questions) {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      const licenseText = getLicense(answers.license);
-      fs.writeFileSync("LICENSE", licenseText);
       writeToFile("README.md", answers);
     })
     .catch((error) => {

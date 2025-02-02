@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 
-import getLicense from "./getLicense.js";
+import fs from "fs";
 
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
@@ -38,21 +38,26 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  if (license === "MIT") {
-    return ``;
-  }
+  let path = "";
   if (license === "GNU") {
-    return ``;
+    path = "utils/gnu.md";
+  }
+  if (license === "MIT") {
+    path = "utils/mit.md";
   }
   if (license === "Apache") {
-    return ``;
+    path = "utils/apache.md";
   }
+  const text = fs.readFileSync(path, "utf-8");
+  return text;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
-  getLicense(data.license);
+  const licenseText = renderLicenseSection(data.license);
+  fs.writeFileSync("LICENSE", licenseText);
+
   return `# ${data.title}
 
 ${licenseBadge}
