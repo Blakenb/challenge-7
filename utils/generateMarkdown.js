@@ -66,8 +66,9 @@ ${licenseBadge}
 - [License](#license)
 - [Description](#description)
 - [Installation Instructions](#installation-instructions)
-- [Contribution guidelines](#Contribution-guidelines)
-- [Test instructions](#Test-instructions)
+- [Contribution guidelines](#contribution-guidelines)
+- [Test instructions](#test-instructions)
+- [How to reach me](#how-to-reach-me)
 
 
 ## License
@@ -86,6 +87,10 @@ ${data.contribution}
 
 ## Test instructions
 ${data.test}
+
+## How to reach me
+${data.Email}
+${data.GitHub.com}
 `;
 }
 
