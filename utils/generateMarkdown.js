@@ -1,14 +1,23 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+
+import getLicense from "./getLicense.js";
+
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT") {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](${renderLicenseLink(
+      license
+    )})`;
   }
   if (license === "GNU") {
-    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+    return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](${renderLicenseLink(
+      license
+    )})`;
   }
   if (license === "Apache") {
-    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+    return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](${renderLicenseLink(
+      license
+    )})`;
   }
 }
 
@@ -28,19 +37,30 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === "MIT") {
+    return ``;
+  }
+  if (license === "GNU") {
+    return ``;
+  }
+  if (license === "Apache") {
+    return ``;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseBadge = renderLicenseBadge(data.license);
-  console.log(data.license);
-  console.log(licenseBadge);
+  getLicense(data.license);
   return `# ${data.title}
 
 ${licenseBadge}
 
 ## License
 ${renderLicenseLink(data.license)}
+
+
 
 ## Description
 ${data.description} 
