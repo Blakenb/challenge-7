@@ -1,14 +1,46 @@
 // TODO: Include packages needed for this application
 import fs from "fs";
-const generateMarkdown = require("./utils/generateMarkdown");
+import generateMarkdown from "./utils/generateMarkdown.js";
 import inquirer from "inquirer";
+
 // TODO: Create an array of questions for user input
 const questions = [
+  {
+    type: "list",
+    name: "license",
+    message: "select project license",
+    choices: ["MIT", "GNU"],
+  },
+
+  {
+    type: "input",
+    name: "title",
+    message: "what is the project title?",
+  },
   {
     type: "input",
     name: "description",
     message: "please describe your project",
-    default: "",
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "installation instructions",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "usage information",
+  },
+  {
+    type: "input",
+    name: "contribution",
+    message: "Contribution guidelines",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "Test instructions",
   },
 ];
 
@@ -19,7 +51,6 @@ function writeToFile(fileName, data) {
   const md = generateMarkdown(data);
   console.log(md);
   fs.writeFileSync(fileName, md);
-  console.log(textRead);
 }
 
 // TODO: Create a function to initialize app
@@ -31,6 +62,7 @@ function init(questions) {
       writeToFile("README.md", answers);
     })
     .catch((error) => {
+      console.log(error);
       if (error.isTtyError) {
         // Prompt couldn't be rendered in the current environment
       } else {
