@@ -90,7 +90,7 @@ ${data.test}
 
 ## How to reach me
 ${data.Email}
-${data.GitHub.com}
+https://github.com/${data.gitUsername}
 `;
 }
 
