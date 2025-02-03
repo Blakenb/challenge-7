@@ -48,6 +48,9 @@ function renderLicenseSection(license) {
   if (license === "Apache") {
     path = "utils/apache.md";
   }
+  if (path === "") {
+    return "";
+  }
   const text = fs.readFileSync(path, "utf-8");
   return text;
 }

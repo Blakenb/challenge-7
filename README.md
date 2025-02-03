@@ -36,4 +36,4 @@ You can use this to test what you are doing
 blake@email.com
 https://github.com/blakenb
 
-<iframe src="https://drive.google.com/file/d/1zWTKoWHs6zy_urv_-cl_OCoavtyIECzt/preview" width="640" height="480"></iframe>
+[video walkthrough](https://drive.google.com/file/d/1zWTKoWHs6zy_urv_-cl_OCoavtyIECzt/preview)
