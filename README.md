@@ -25,7 +25,7 @@ follow the promts
 
 ## Contribution guidelines
 
-Always be sure to give credit where credit is due, and recognize those who have helped you along the way. For me it was my brother thomas , Lexus, and Danah who helped me on this
+Always be sure to give credit where credit is due, and recognize those who have helped you along the way. For me it was my brother Thomas , Lexus, and Danah who helped me on this
 
 ## Test instructions
 

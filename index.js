@@ -2,7 +2,6 @@
 import fs from "fs";
 import generateMarkdown from "./utils/generateMarkdown.js";
 import inquirer from "inquirer";
-
 // TODO: Create an array of questions for user input
 const questions = [
   {
