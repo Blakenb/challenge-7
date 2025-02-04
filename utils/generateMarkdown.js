@@ -85,6 +85,9 @@ ${data.description}
 ## Installation Instructions
 ${data.installation}
 
+## Usage information
+${data.usage}
+
 ## Contribution guidelines
 ${data.contribution}
 
